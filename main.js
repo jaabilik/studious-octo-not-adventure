@@ -1,6 +1,8 @@
 /*created by prashant shukla */
 rightWristX = "";
 rightWristY = "";
+scoreRightWrist = 0;
+game_status = "";
 
 score = 0;
 
@@ -50,8 +52,13 @@ function gotPoses(results) {
 	}
   }
 
-function draw(){
+  function startGame() {
+    game_status = "start";
+    document.getElementById("status").innerHTML = "Game has Woaded :3";
+  }
 
+function draw(){
+  if(game_status == "start") {
  background(0);
 
  fill("black");
@@ -95,6 +102,7 @@ function draw(){
    
    //function move call which in very important
     move();
+}
 }
 
 function startGame() {
